@@ -12,6 +12,20 @@ window.addEventListener('DOMContentLoaded', (event) => {
         imagePreview.appendChild(image);
     }
 
+    // Função para redimensionar a imagem
+    function resizeImage(image, width, height, callback) {
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d');
+        canvas.width = width;
+        canvas.height = height;
+
+        pica().resize(image, canvas, { unsharpAmount: 80 }, () => {
+            const resizedImage = new Image();
+            resizedImage.src = canvas.toDataURL('image/jpeg');
+            callback(resizedImage);
+        });
+    }
+
     // Evento de upload de arquivo
     fileUpload.addEventListener('change', (event) => {
         const file = event.target.files[0];
@@ -20,7 +34,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
         reader.onload = function (e) {
             const image = document.createElement('img');
             image.src = e.target.result;
-            displayImage(image);
+
+            resizeImage(image, 600, 600, (resizedImage) => {
+                displayImage(resizedImage);
+            });
         }
 
         reader.readAsDataURL(file);
