@@ -1,3 +1,22 @@
+header {
+    background-color: #E84752;
+    color: #fff;
+    padding: 10px;
+    text-align: center; /* Adicionado para centralizar o conteúdo */
+}
+footer {
+    background-color: #E84752;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+header h1 {
+    margin: 0; /* Removido a margem superior padrão do título */
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -5,7 +24,7 @@ body {
 }
 
 header {
-    background-color: #000;
+    background-color: #E84752;
     color: #fff;
     padding: 20px;
 }
