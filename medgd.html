@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sistema de Análises de Percentual de Gordura</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <span class="logo">Sistema de Análises de Percentual de Gordura</span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="upload-container">
+            <input type="file" id="file-upload" accept="image/*">
+            <div id="image-preview"></div>
+        </div>
+        <div class="info-container">
+            <h2>Informações da Foto</h2>
+            <div id="image-info">
+                <p>% de gordura: <span id="gordura"></span></p>
+                <p>% de carne: <span id="carne"></span></p>
+                <p>% - não determinado: <span id="nao-determinado"></span></p>
+            </div>
+            <div class="buttons-container">
+                <button id="processar-btn">Processar</button>
+                <button id="salvar-btn">Salvar</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content"></div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
